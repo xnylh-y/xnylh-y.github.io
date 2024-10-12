@@ -12,25 +12,18 @@ on:
 # Putting Environment Variables Here You Need To Replace It With Your Own
 env:
   # After Hexo Compiles Use This Git User To Deploy To The Github Warehouse
-  GIT_USER: PDPENG
+  GIT_USER: xnylh-y
   # After Hexo Compiles Use This Git Mailbox To Deploy To The Github Warehouse
-  GIT_EMAIL: jason.peng.code@gmail.com
+  GIT_EMAIL: wznn3851846@gmail.com
   # The Git Hub Warehouse To Be Deployed After Hexo Compiles
-  GIT_DEPLOY_REPO: PDPENG/pdpeng.github.io
+  GIT_DEPLOY_REPO: xnylh-y/xnylh-y.github.io
   # Hexo Compiles The Branch To Deploy After Compilation
   GIT_DEPLOY_BRANCH: master
   
-  # After Hexo Compiles Use This Gitee User To Deploy To The Gitee Warehouse
-  GITEE_USER: Coder-Jason
-  # The Gitee Warehouse To Be Deployed After Hexo Compiles
-  GITEE_DEPLOY_REPO: Coder-Jason/Coder-Jason
-  # Hexo Compiles The Branch To Deploy After Compilation
-  GITEE_DEPLOY_BRANCH: master
   
   # Pay Attention To Replacing Your Github Source Warehouse Address
-  GIT_SOURCE_REPO: git@github.com:PDPENG/pdpeng.github.io.git
-  # Pay Attention To Replacement To Your Gitee Target Warehouse Address
-  GITEE_DESTINATION_REPO: git@gitee.com:Coder-Jason/coder-jason.git
+  GIT_SOURCE_REPO: git@github.com:xnylh-y/xnylh-y.github.io.git
+
 
 jobs:
   build:
@@ -67,7 +60,6 @@ jobs:
           echo "$HEXO_DEPLOY_PRI" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-          ssh-keyscan -t rsa gitee.com >> ~/.ssh/known_hosts
           git config --global user.name $GIT_USER
           git config --global user.email $GIT_EMAIL
       - name: Install dependencies
